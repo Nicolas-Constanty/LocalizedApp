@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:LocalizedApp"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- A -->
+    <!-- B -->
+    <!-- C -->
+    <system:String x:Key="_Close">Fermer</system:String>
+    <system:String x:Key="_Culture">fr-FR</system:String>
+    <system:String x:Key="_Culture_Lang">Français</system:String>
+    <!-- D -->
+    <!-- E -->
+    <system:String x:Key="_Edit">Edition</system:String>
+    <system:String x:Key="_English">Anglais</system:String>
+    <system:String x:Key="_Exist">Sortir</system:String>
+    <!-- F -->
+    <system:String x:Key="_File">Fichier</system:String>
+    <system:String x:Key="_French">Français</system:String>
+    <!-- G -->
+    <!-- H -->
+    <!-- I -->
+    <!-- J -->
+    <!-- K -->
+    <!-- L -->
+    <system:String x:Key="_Language">Langue</system:String>
+    <system:String x:Key="_Languages">Langues</system:String>
+    <!-- M -->
+    <!-- N -->
+    <!-- O -->
+    <system:String x:Key="_Open">Ouvrir</system:String>
+    <!-- P -->
+    <!-- Q -->
+    <system:String x:Key="_Quit">Quitter</system:String>
+    <!-- R -->
+    <!-- S -->
+    <system:String x:Key="_Settings">Paramètres</system:String>
+    <!-- T -->
+    <!-- U -->
+    <!-- V -->
+    <system:String x:Key="_Save">Sauvegarder</system:String>
+    <!-- W -->
+    <!-- X -->
+    <!-- Y -->
+    <!-- Z -->
+    
+</ResourceDictionary>
