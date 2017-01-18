@@ -56,12 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Debug.cs" />
-    <Compile Include="LanguagesHandler.cs" />
+    <Compile Include="Sources\Debug.cs" />
+    <Compile Include="Sources\LanguagesHandler.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Singleton.cs" />
+    <Compile Include="Sources\Singleton.cs" />
     <Page Include="Languages\en-EN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
