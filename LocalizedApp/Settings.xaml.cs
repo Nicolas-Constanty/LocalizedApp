@@ -12,6 +12,7 @@ namespace LocalizedApp
     {
         private String[] _lang_array;
         private String[] _language_codes;
+        private bool closed = false;
 
         public Settings()
         {
@@ -89,10 +90,18 @@ namespace LocalizedApp
             }
         }
 
+        public void CloseSetting()
+        {
+            closed = true;
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            e.Cancel = true;
-            Hide();
+            if (!closed)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
     }
 }

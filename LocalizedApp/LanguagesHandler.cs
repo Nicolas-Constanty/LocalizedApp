@@ -56,6 +56,7 @@ namespace LocalizedApp
                 Application.Current.Resources.MergedDictionaries.Add(dict);
                 _main_window.Resources.MergedDictionaries.Clear();
                 _main_window.Resources.MergedDictionaries.Add(dict);
+                Settings.AddUpdateAppSettings("lang", name);
             }
             else
                 Debug.Warning("Main Window is null, you shoud call SetMainWindow");
@@ -76,7 +77,10 @@ namespace LocalizedApp
                     w.Resources.MergedDictionaries.Clear();
                     w.Resources.MergedDictionaries.Add(dict);
                 }
+                Settings.AddUpdateAppSettings("lang", name);
             }
+            else
+                Debug.Warning("Main Window is null, you shoud call SetMainWindow");
         }
 
         private void SetDefaultLanguageDictionary()
@@ -105,7 +109,8 @@ namespace LocalizedApp
                 _main_window.Resources.MergedDictionaries.Clear();
                 _main_window.Resources.MergedDictionaries.Add(dict);
             }
-
+            else
+                Debug.Warning("Main Window is null, you shoud call SetMainWindow");
         }
         
     }

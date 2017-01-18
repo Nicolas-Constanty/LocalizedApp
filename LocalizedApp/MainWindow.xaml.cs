@@ -33,5 +33,14 @@ namespace LocalizedApp
             else
                 _settings_windows.Visibility = Visibility.Hidden;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (_settings_windows != null)
+            {
+                _settings_windows.CloseSetting();
+                _settings_windows.Close();
+            }
+        }
     }
 }
