@@ -16,13 +16,6 @@ namespace LocalizedApp
             App app = (App)Application.Current;
             LanguagesHandler.Instance.LoadConfig();
         }
-        private void LoadDynamicResource(String StyleToUse)
-        {
-
-            ResourceDictionary dic = new ResourceDictionary { Source = new Uri(StyleToUse, UriKind.Relative) };
-            Resources.MergedDictionaries.Clear();
-            Resources.MergedDictionaries.Add(dic);
-        }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
