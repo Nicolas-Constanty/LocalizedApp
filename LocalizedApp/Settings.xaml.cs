@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LocalizedApp
 {
@@ -32,14 +23,14 @@ namespace LocalizedApp
 
         private void LoadLangCodes()
         {
-            String language_codes = App.GetSetting("language_codes");
+            String language_codes = GetKey("language_codes");
             _language_codes = language_codes.Split(',');
         }
 
         private void InitComboBoxLabel()
         {
             ComboBox_Languages.SelectionChanged -= ComboBox_Languages_SelectionChanged;
-            String languages = App.GetSetting("languages");
+            String languages = GetKey("languages");
             if (!String.IsNullOrEmpty(languages))
             {
                 _lang_array = languages.Split(',');
@@ -58,7 +49,50 @@ namespace LocalizedApp
         {
             App app = App.Current as App;
             ComboBox cmb = sender as ComboBox;
-            app.LoadLanguage(_language_codes[cmb.SelectedIndex], this);
+            LanguagesHandler.Instance.LoadLanguage(_language_codes[cmb.SelectedIndex], this);
+        }
+
+        static public String GetKey(string key)
+        {
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+                String result = appSettings[key] ?? null;
+                return result;
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error reading app settings");
+                return null;
+            }
+        }
+        static public void AddUpdateAppSettings(string key, string value)
+        {
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+                if (settings[key] == null)
+                {
+                    settings.Add(key, value);
+                }
+                else
+                {
+                    settings[key].Value = value;
+                }
+                configFile.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error writing app settings");
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
         }
     }
 }

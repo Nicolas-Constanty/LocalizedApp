@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LocalizedApp"
         mc:Ignorable="d"
-        Title="{DynamicResource  _Settings}" Height="300" Width="300">
+        Title="{DynamicResource  _Settings}" Height="300" Width="300" Closing="Window_Closing">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="283*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
         <ComboBox x:Name="ComboBox_Languages" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_Languages_SelectionChanged">
         </ComboBox>
         <TextBlock Text="{DynamicResource _Languages}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" Width="120" FontSize="14"/>
