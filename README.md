@@ -1,6 +1,6 @@
 # LocalizedApp
 
-This is a sample for localizied WPF Application
+This is a sample for localizied WPF Application.
 
 ## Getting Started
 
@@ -12,7 +12,7 @@ This is a sample for localizied WPF Application
 * Run Visual Studio
 * Press F5
 * Go to Edit->Settings
-* Select a language
+* Select a language (GUI will be update at runtime, no restart required)
 * Voilà
 
 The language settings are automatically save.
